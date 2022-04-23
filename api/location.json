@@ -1,0 +1,182 @@
+[
+        {
+          "location": "Andaman and Nicobar Islands",
+          "latitude": 12.36718,
+          "longitude": 92.924179
+        },
+        {
+          "location": "Andhra Pradesh",
+          "latitude": 17.686815,
+          "longitude": 83.218483
+        },
+        {
+          "location": "Arunachal Pradesh",
+          "latitude": 27.845148,
+          "longitude": 95.247345
+        },
+        {
+          "location": "Assam",
+          "latitude": 26.244156,
+          "longitude": 92.537842
+        },
+        {
+          "location": "Bihar",
+          "latitude": 25.563322,
+          "longitude": 84.869804
+        },
+        {
+          "location": "Chandigarh",
+          "latitude": 30.738270,
+          "longitude": 76.765144
+        },
+        {
+          "location": "Chhattisgarh",
+          "latitude": 21.295132,
+          "longitude": 81.828232
+        },
+        {
+          "location": "Dadra and Nagar Haveli and Daman and Diu",
+          "latitude": 20.397373,
+          "longitude": 72.832802
+        },
+        {
+          "location": "Delhi",
+          "latitude": 28.6448,
+          "longitude": 77.216721
+        },
+        {
+          "location": "Goa",
+          "latitude": 15.496777,
+          "longitude": 73.827827
+        },
+        {
+          "location": "Gujarat",
+          "latitude": 22.309425,
+          "longitude": 72.13623
+        },
+        {
+          "location": "Haryana",
+          "latitude": 29.238478,
+          "longitude": 76.431885
+        },
+        {
+          "location": "Himachal Pradesh",
+          "latitude": 32.084206,
+          "longitude": 77.571167
+        },
+        {
+          "location": "Jammu and Kashmir",
+          "latitude": 34.083656,
+          "longitude": 74.797371
+        },
+        {
+          "location": "Jharkhand",
+          "latitude": 23.344315,
+          "longitude": 85.296013
+        },
+        {
+          "location": "Karnataka",
+          "latitude": 15.317277,
+          "longitude": 75.71389
+        },
+        {
+          "location": "Kerala",
+          "latitude": 10.850516,
+          "longitude": 76.27108
+        },
+        {
+          "location": "Ladakh",
+          "latitude": 34.209515,
+          "longitude": 77.615112
+        },
+        {
+          "location": "Lakshadweep",
+          "latitude": 11.098209,
+          "longitude": 72.152466
+        },
+        {
+          "location": "Madhya Pradesh",
+          "latitude": 23.473324,
+          "longitude": 77.947998
+        },
+        {
+          "location": "Maharashtra",
+          "latitude": 19.601194,
+          "longitude": 75.552979
+        },
+        {
+          "location": "Manipur",
+          "latitude": 24.813967,
+          "longitude": 93.950279
+        },
+        {
+          "location": "Meghalaya",
+          "latitude": 25.487389,
+          "longitude": 90.412735
+        },
+        {
+          "location": "Mizoram",
+          "latitude": 23.727106,
+          "longitude": 92.717636
+        },
+        {
+          "location": "Nagaland",
+          "latitude": 25.906267,
+          "longitude": 93.727592
+        },
+        {
+          "location": "Odisha",
+          "latitude": 20.94092,
+          "longitude": 84.803467
+        },
+        {
+          "location": "Puducherry",
+          "latitude": 11.916064,
+          "longitude": 79.812325
+        },
+        {
+          "location": "Punjab",
+          "latitude": 30.900965,
+          "longitude": 75.857277
+        },
+        {
+          "location": "Rajasthan",
+          "latitude": 27.391277,
+          "longitude": 73.432617
+        },
+        {
+          "location": "Sikkim",
+          "latitude": 27.338936,
+          "longitude": 88.606506
+        },
+        {
+          "location": "Tamil Nadu",
+          "latitude": 11.059821,
+          "longitude": 78.387451
+        },
+        {
+          "location": "Telangana",
+          "latitude": 17.123184,
+          "longitude": 79.208824
+        },
+        {
+          "location": "Tripura",
+          "latitude": 23.745127,
+          "longitude": 91.746826
+        },
+        {
+          "location": "Uttar Pradesh",
+          "latitude": 28.207609,
+          "longitude": 79.82666
+        },
+        {
+          "location": "Uttarakhand",
+          "latitude": 30.316496,
+          "longitude": 78.032188
+        },
+        {
+          "location": "West Bengal",
+          "latitude": 22.978624,
+          "longitude": 87.747803
+        }
+      ]
