@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Covid Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <meta name="theme-color" content="#666666"/>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/src/assets/react-logo.png">
+</head>
+<body>
+  <div id="app"></div>
+  <noscript>
+    <div>Javascript is disabled and you may miss some of the cool stuff :(</div>
+  </noscript>
+  <script src="/dist/app.bundle.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('serviceWorker.js')
+        .then(function(registration) {
+          console.log('%c##Service Worker##',
+                'background: #008000	; color: #fff',
+                'Registration successful with scope: ',registration.scope);
+        })
+        .catch(function(err) {
+          console.log('%c##Service Worker##',
+                'background: #D50000	; color: #fff',
+                'Registration failed ',err);
+        });
+    }
+  </script>  
+</body>
+</html>

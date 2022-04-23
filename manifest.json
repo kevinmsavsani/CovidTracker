@@ -1,0 +1,22 @@
+{
+  "name": "Covid Tracker",
+  "short_name": "Covid Tracker",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#666666",
+  "theme_color": "#666666",
+  "description": "Covid Tracker for India",
+  "icons": [
+    {
+      "src": "/dist/assets/react-logo.png",
+      "sizes": "225x225",
+      "type": "image/png"
+    },
+    {
+      "src": "/dist/assets/corona.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
