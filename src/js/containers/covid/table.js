@@ -19,7 +19,7 @@ function GlobalFilter({
     <div className='my-3 relative'>
       Search:{' '}
       <input
-      className="shadow appearance-none sm:max-w-screen-sm border rounded py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      className="shadow appearance-none w-40 lg:w-60 sm:max-w-screen-sm border rounded py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         value={value || ""}
         onChange={e => {
           setValue(e.target.value);

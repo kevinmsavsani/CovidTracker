@@ -11,7 +11,7 @@
     "dev": "webpack serve --mode development --config config/webpack.config.development.js --inline --hot --history-api-fallback --progress",
     "prebuild": "NODE_ENV=production yarn build-css",
     "build": "webpack --mode production --config config/webpack.config.production.js",
-    "server": "nodemon --inspect --ignore src/ api/server.js"
+    "server:dev": "nodemon --inspect --ignore src/ server.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

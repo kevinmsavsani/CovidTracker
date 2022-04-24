@@ -76,9 +76,6 @@
         })
     );
   });
-  self.addEventListener('periodicsync', event => {
-    console.log('periodic sync call')
-  });
 
   self.addEventListener('fetch', function (event) {
     const cached = caches.match(event.request);
