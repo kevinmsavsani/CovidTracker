@@ -4,14 +4,14 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const path  = require('path');
 
 module.exports = {
-  context: path.join(__dirname, "../src"),
+  context: path.join(__dirname, "src"),
   devtool:  "source-map",
   entry: {
     app:['babel-polyfill',"./client.js"],
     // main:"./js/containers/MainContainer.js"
   }, 
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
     //libraryTarget: "umd", //uncomment this if you want to build in UMD
     filename: '[name].bundle.js',
@@ -22,7 +22,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        include: path.join(__dirname, "../src"),
+        include: path.join(__dirname, "src"),
         options: {
           presets: [
             [
@@ -52,7 +52,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
-      '@': path.resolve(__dirname, '../src'),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
 
@@ -64,7 +64,7 @@ module.exports = {
       maximumFileSizeToCacheInBytes: 50000000
     }),
     new HtmlWebpackPlugin({
-        template:  path.resolve(__dirname, '../index.html'),
+        template:  path.resolve(__dirname, 'index.html'),
     }),
   ],
 };

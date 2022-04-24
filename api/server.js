@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-const buildPath = path.join(__dirname, '../config/dist');
+const buildPath = path.join(__dirname, '../dist');
 app.use(express.static(buildPath))
 app.get("/ui", function (req, res) {
   res.sendFile(path.join(buildPath, "index.html"));
