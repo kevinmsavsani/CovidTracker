@@ -3,6 +3,7 @@ const express = require('express');
 var location = require('./location.json')
 var app = express();
 const bodyParser = require('body-parser');
+const path  = require('path');
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
@@ -13,6 +14,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+const buildPath = path.join(__dirname, '../config/dist');
+app.use(express.static(buildPath))
+app.get("/ui", function (req, res) {
+  res.sendFile(path.join(buildPath, "index.html"));
+});
 var mcache = require('memory-cache');
 
 var cache = (duration) => {
@@ -107,4 +113,4 @@ router.route('/')
 
 app.use('/api',router)
 
-app.listen(8081,()=> {console.log("Node Server Running on PORT:8081")})
+app.listen(process.env.PORT || 8081,()=> {console.log(`Node Server Running on PORT:${process.env.PORT || 8081}`)})

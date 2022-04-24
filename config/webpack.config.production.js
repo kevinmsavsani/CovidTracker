@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 const CssNano = require('cssnano');
 const { EnvironmentPlugin } = require('webpack');
 const { merge } = require('webpack-merge');
@@ -67,12 +68,11 @@ module.exports = merge(config, {
   plugins: [
     new CleanWebpackPlugin(),
 
-    new EnvironmentPlugin(['BASE_URL']),
-
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash].css',
       chunkFilename: 'assets/css/[id].[contenthash].css',
     }),
+    new Dotenv()
   ],
 
   optimization: {

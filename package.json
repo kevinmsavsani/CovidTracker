@@ -4,14 +4,15 @@
   "main": "index.js",
   "license": "Unlicense",
   "scripts": {
-    "start": "serve dist -s",
+    "start": "serve config/dist -s",
     "build-css": "tailwindcss build node_modules/tailwindcss/tailwind.css -o src/style.css",
     "watch-css": "chokidar 'tailwind.config.js' --initial=true -c 'yarn build-css'",
     "predev": "yarn build-css",
     "dev": "webpack serve --mode development --config config/webpack.config.development.js --inline --hot --history-api-fallback --progress",
-    "prebuild": "NODE_ENV=production yarn build-css",
+    "prebuild": "NODE_ENV=production yarn build-css && (cd api && yarn install)",
     "build": "webpack --mode production --config config/webpack.config.production.js",
-    "server:dev": "nodemon --inspect --ignore src/ server.js"
+    "server:dev": "nodemon --inspect --ignore src/ api/server.js",
+    "server": "cd api && yarn start"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
