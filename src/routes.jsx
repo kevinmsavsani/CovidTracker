@@ -1,4 +1,4 @@
-import * as Covid from './js/containers/covid/route.jsx';
-import * as CovidMap from './js/containers/map/route.jsx';
+import * as Covid from './containers/covid/route.jsx';
+import * as CovidMap from './containers/map/route.jsx';
 
 export default [ Covid, CovidMap];

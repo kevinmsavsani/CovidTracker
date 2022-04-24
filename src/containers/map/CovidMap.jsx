@@ -1,7 +1,7 @@
 import {React, useState} from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { Icon } from 'leaflet'
-import coronaIcon from '../../../assets/covid19.png'
+import coronaIcon from '../../assets/covid19.png'
 import 'leaflet/dist/leaflet.css';
 import { useSelector } from 'react-redux'
 

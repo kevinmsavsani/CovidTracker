@@ -6,8 +6,8 @@ import thunk from 'redux-thunk'
 import reducer from './reducers/reducer'
 import './style.css';
 import App from './App.jsx';
-import reactImages from '../assets/react-logo.png'
-import coronaImage from '../assets/corona.png'
+import reactImages from './assets/react-logo.png'
+import coronaImage from './assets/corona.png'
 import {processQueuedAsyncActions,onlineDetected, offlineDetected} from './actions/action'
 
 const app = document.getElementById('app')
