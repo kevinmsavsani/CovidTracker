@@ -6,7 +6,7 @@ import routes from '@/routes.jsx';
 import Layout from '@/components/Layout.jsx';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { setItemsList } from './actions/action';
+import setItemsList from './actions/action';
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -21,10 +21,7 @@ const App = () => {
    },[])
 
    useEffect(()=>{      
-     dispatch({
-      type: "SET_ITEMS_LIST",
-      items: data,
-    })
+     dispatch(setItemsList(data))
    },[data, dispatch])
    
   

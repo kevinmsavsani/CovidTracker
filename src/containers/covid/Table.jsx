@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import { useTable, useFilters, useGlobalFilter, useAsyncDebounce, useSortBy, usePagination } from 'react-table'
 import 'regenerator-runtime/runtime'
 
-// Define a default UI for filtering
 function GlobalFilter({
   preGlobalFilteredRows,
   globalFilter,
@@ -31,53 +30,13 @@ function GlobalFilter({
   )
 }
 
-// This is a custom filter UI for selecting
-// a unique option from a list
-export function SelectColumnFilter({
-  column: { filterValue, setFilter, preFilteredRows, id },
-}) {
-  // Calculate the options for filtering
-  // using the preFilteredRows
-  const options = React.useMemo(() => {
-    const options = new Set()
-    preFilteredRows.forEach(row => {
-      options.add(row.values[id])
-    })
-    return [...options.values()]
-  }, [id, preFilteredRows])
-
-  // Render a multi-select box
-  return (
-    <select
-      name={id}
-      id={id}
-      value={filterValue}
-      onChange={e => {
-        setFilter(e.target.value || undefined)
-      }}
-    >
-      <option value="">All</option>
-      {options.map((option, i) => (
-        <option key={i} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
-  )
-}
-
 function Table({ columns, data }) {
-  // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     prepareRow,
-    
-    page, // Instead of using 'rows', we'll use page,
-    // which has only the rows for the active page
-
-    // The rest of these things are super handy, too ;)
+    page,
     canPreviousPage,
     canNextPage,
     pageOptions,
@@ -92,15 +51,14 @@ function Table({ columns, data }) {
     columns,
     data,
   },
-    useFilters, // useFilters!
+    useFilters, 
     useGlobalFilter,
     useSortBy,
-    usePagination,  // new
+    usePagination, 
   )
 
   const size = ['w-60','w-40','w-40','w-40','w-40','w-40','w-40']
 
-  // Render the UI for your table
   return (
     <div className='w-full'>
       <div className='h-16'>
@@ -110,16 +68,6 @@ function Table({ columns, data }) {
         setGlobalFilter={setGlobalFilter}
       />
       </div>
-      {headerGroups.map((headerGroup) =>
-        headerGroup.headers.map((column) =>
-          column.Filter ? (
-            <div key={column.id}>
-              <label htmlFor={column.id}>{column.render("Header")}: </label>
-              {column.render("Filter")}
-            </div>
-          ) : null
-        )
-      )}
       <div className='relative'>
       <table {...getTableProps()} className='sm:shadow-2xl border-collapse w-full'>
         <thead className='sm:visible invisible absolute sm:relative bg-green-400 w-full'>
@@ -148,7 +96,7 @@ function Table({ columns, data }) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {  // new
+          {page.map((row, i) => {  
             prepareRow(row)
             return (
               <tr {...row.getRowProps()} className='bg-white shadow-lg sm:shadow-none mb-6 sm:mb-0 flex flex-row flex-wrap cursor-pointer hover:bg-gray-100 sm:flex-no-wrap border-l-2 border-r-2 hover:border-gray-600'>
@@ -165,7 +113,6 @@ function Table({ columns, data }) {
         </tbody>
       </table>
       </div>
-      {/* new */}
       <div className="pagination my-5 text-sm inline-flex w-full">
       <span>
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold px-1 lg:px-4 mx-1 lg:mx-2 rounded-r">

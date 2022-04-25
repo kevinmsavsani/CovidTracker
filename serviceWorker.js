@@ -8,7 +8,7 @@
   ];
 
   var apiToCache = [
-    'http://localhost:8081/api'
+    `${process.env.BASE_URL}/api`
   ]
 
   var staticCaches = 'appshell-cache';

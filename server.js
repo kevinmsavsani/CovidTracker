@@ -54,7 +54,6 @@ router.use(function(req, res, next) {
 
 router.route('/')
 		.get(cache(60), async function(req, res){
-      console.log(req.url)
   const browser = await puppeteer.launch({ headless: true,args: [
     '--disable-gpu',
     '--disable-dev-shm-usage',

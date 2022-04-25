@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import Table from './table.js'
+import Table from './Table.jsx'
 
 function Covid() {
   const items = useSelector((store) => store.items);
