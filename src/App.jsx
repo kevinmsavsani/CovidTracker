@@ -14,7 +14,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get("http://localhost:8081/api")
+      const response = await axios.get(`${process.env.BASE_URL}/api`)
       setData(response.data)
     }
     fetchData();
