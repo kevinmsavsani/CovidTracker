@@ -15,10 +15,11 @@ app.use(function(req, res, next) {
 });
 
 const buildPath = path.join(__dirname, 'dist');
+app.use('*/manifest.json',express.static(path.join(buildPath, 'manifest.json')));
 app.use('*/css',express.static(path.join(buildPath, 'assets/css')));
 app.use('*/js',express.static(path.join(buildPath, 'assets/js')));
-app.use('*/img',express.static(path.join(buildPath, 'assets/img')));
-
+app.use('**/covid19.png',express.static(path.join(buildPath, 'assets/covid19.png')));
+app.use('**/react-logo.png',express.static(path.join(buildPath, 'assets/react-logo.png')));
 app.get("/ui", function (req, res) {
   res.sendFile(path.join(buildPath, "index.html"));
 });

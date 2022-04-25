@@ -9,6 +9,14 @@ module.exports = merge(config, {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: './assets/[name].[ext]'
+        }
+    
       }
     ],
   },
