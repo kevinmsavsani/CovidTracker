@@ -14,8 +14,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-const buildPath = path.join(__dirname, '../dist');
-app.use(express.static(buildPath))
+const buildPath = path.join(__dirname, 'dist');
+app.use('*/css',express.static(path.join(buildPath, 'assets/css')));
+app.use('*/js',express.static(path.join(buildPath, 'assets/js')));
+app.use('*/img',express.static(path.join(buildPath, 'assets/img')));
+
 app.get("/ui", function (req, res) {
   res.sendFile(path.join(buildPath, "index.html"));
 });
