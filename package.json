@@ -1,7 +1,7 @@
 {
   "name": "covid-tracker",
   "version": "1.1.0",
-  "main": "index.js",
+  "main": "src/client.js",
   "license": "Unlicense",
   "homepage": ".",
   "scripts": {
