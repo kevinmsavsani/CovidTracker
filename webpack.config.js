@@ -49,16 +49,11 @@ module.exports = {
   },
 
   plugins: [
-    new WorkboxPlugin.InjectManifest({
-      swSrc: path.resolve(__dirname,"service-worker.js"),
-      swDest: "service-worker.js",
-      exclude: [
-        /\.map$/,
-        /manifest$/,
-        /\.htaccess$/,
-        /service-worker\.js$/,
-        /sw\.js$/,
-      ],
+    new WorkboxPlugin.GenerateSW({
+      cleanupOutdatedCaches: true,
+      clientsClaim: true,
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 50000000
     }),
     new HtmlWebpackPlugin({
         template:  path.resolve(__dirname, 'index.html'),

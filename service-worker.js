@@ -1,6 +1,3 @@
-import { precacheAndRoute } from 'workbox-precaching';
-
-precacheAndRoute(self.__WB_MANIFEST);
 
 (function () {
   'use strict';
@@ -9,7 +6,7 @@ precacheAndRoute(self.__WB_MANIFEST);
   ];
 
   var apiToCache = [
-    `${process.env.BASE_URL}/api`
+    'http://localhost:8081/api'
   ]
 
   var staticCaches = 'appshell-cache';
