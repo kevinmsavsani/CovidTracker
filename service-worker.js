@@ -81,14 +81,14 @@
       event.respondWith(
         Promise.race([fetched.catch(_ => cached), cached])
           .then(resp => resp || fetched)
-          .catch(_ => {return caches.match('/offline.html');})
+          .catch(_ => [])
       );
   
       // Update the cache with the version we fetched
       event.waitUntil(
         Promise.all([fetchedCopy, caches.open(apiCaches)])
           .then(([response, cache]) => cache.put(event.request, response))
-          .catch(_ => {return caches.match('/offline.html'); })
+          .catch(_ => [])
       );
     }
     

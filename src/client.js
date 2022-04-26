@@ -16,18 +16,14 @@ const myReduxStoreEnhancer = () => (createStore) => (reducer, preloadedState) =>
 	const store = createStore(reducer, preloadedState)
 	const dispatch = async(action) => {
 		let actionReturned
-
 		actionReturned = store.dispatch(action) 
-		
 		return actionReturned
 	}
 	
 	store.subscribe(() => {
 		console.log("%c:: MY-REDUX-STORE-ENHANCER :: State from Subscribe ::", 'background:#006064; color:#fff' ,store.getState())
-		// if (!navigator.onLine){
 			localStorage.setItem('persistedStore',JSON.stringify(store.getState()))
 			console.log("%c:::::: PERSISTING-STORE ::::::", 'background:#000; color:orange')
-		// }
 	})
 
 	return {
@@ -67,11 +63,6 @@ const myReduxStoreEnhancer = () => (createStore) => (reducer, preloadedState) =>
 	)
 )
 
-/*****************************************************************************************
- * BOOTSTRAPPING REACT APP
- * =======================
- * Self Explanatory I hope :-)
- *****************************************************************************************/
 ReactDOM.render(
 	<Provider store={store}>
 		<App />
