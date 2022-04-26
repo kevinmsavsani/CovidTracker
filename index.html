@@ -13,10 +13,10 @@
   <noscript>
     <div>Javascript is disabled and you may miss some of the cool stuff :(</div>
   </noscript>
-  <script src="/dist/app.bundle.js"></script>
+  <script src="/dist/assets/js/app.bundle.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('assets/js/service-worker.js')
         .then(function(registration) {
           console.log('%c##Service Worker##',
                 'background: #008000	; color: #fff',

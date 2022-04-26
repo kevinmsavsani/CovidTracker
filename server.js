@@ -14,17 +14,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-const buildPath = path.join(__dirname, 'dist');
-app.use('*/service-worker.js',express.static(path.join(buildPath, 'service-worker.js')));
-app.use('*/manifest.json',express.static(path.join(buildPath, 'manifest.json')));
-app.use('*/css',express.static(path.join(buildPath, 'assets/css')));
-app.use('*/js',express.static(path.join(buildPath, 'assets/js')));
-app.use('**/corona.png',express.static(path.join(buildPath, 'assets/corona.png')));
-app.use('**/covid19.png',express.static(path.join(buildPath, 'assets/covid19.png')));
-app.use('**/react-logo.png',express.static(path.join(buildPath, 'assets/react-logo.png')));
-app.get("/", function (req, res) {
-  res.sendFile(path.join(buildPath, "index.html"));
-});
 var mcache = require('memory-cache');
 
 var cache = (duration) => {
@@ -119,4 +108,14 @@ router.route('/')
 
 app.use('/api',router)
 
+const buildPath = path.join(__dirname, 'dist');
+app.use('*/manifest.json',express.static(path.join(buildPath, 'manifest.json')));
+app.use('*/css',express.static(path.join(buildPath, 'assets/css')));
+app.use('*/js',express.static(path.join(buildPath, 'assets/js')));
+app.use('**/corona.png',express.static(path.join(buildPath, 'assets/corona.png')));
+app.use('**/covid19.png',express.static(path.join(buildPath, 'assets/covid19.png')));
+app.use('**/react-logo.png',express.static(path.join(buildPath, 'assets/react-logo.png')));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(buildPath, "index.html"));
+});
 app.listen(process.env.PORT || 8081,()=> {console.log(`Node Server Running on PORT:${process.env.PORT || 8081}`)})

@@ -5,7 +5,6 @@ const path  = require('path');
 
 module.exports = {
   context: path.join(__dirname, "src"),
-  devtool:  "source-map",
   entry: {
     app:["./client.js"],
     // main:"./js/containers/MainContainer.js"
@@ -53,6 +52,7 @@ module.exports = {
       cleanupOutdatedCaches: true,
       clientsClaim: true,
       skipWaiting: true,
+      swDest: 'assets/js/service-worker.js',
       maximumFileSizeToCacheInBytes: 50000000
     }),
     new HtmlWebpackPlugin({
