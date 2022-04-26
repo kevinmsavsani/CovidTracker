@@ -10,3 +10,20 @@
 ● visualised the same data on an interactive map - used react-leaflet to make interactive map. can be checked at src/map/CovidMap.jsx  <br />
 
 
+## Hot to Run
+
+To run in development mode - 
+
+```
+yarn
+yarn dev
+yarn start
+```
+
+To run in production mode - 
+
+```
+yarn
+yarn build
+yarn start
+```
