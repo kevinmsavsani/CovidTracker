@@ -24,8 +24,8 @@ function modify(buffer) {
 module.exports = merge(config, {
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: 'assets/js/[name].[contenthash].js',
-    chunkFilename: `assets/js/[contenthash].js`,
+    filename: 'assets/js/[name].bundle.js',
+    chunkFilename: `assets/js/[id].bundle.js`,
   },
 
   module: {

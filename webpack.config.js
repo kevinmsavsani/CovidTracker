@@ -7,7 +7,7 @@ module.exports = {
   context: path.join(__dirname, "src"),
   devtool:  "source-map",
   entry: {
-    app:['babel-polyfill',"./client.js"],
+    app:["./client.js"],
     // main:"./js/containers/MainContainer.js"
   }, 
   output: {
@@ -49,14 +49,19 @@ module.exports = {
   },
 
   plugins: [
-    new WorkboxPlugin.GenerateSW({
-      cleanupOutdatedCaches: true,
-      clientsClaim: true,
-      skipWaiting: true,
-      maximumFileSizeToCacheInBytes: 50000000
+    new WorkboxPlugin.InjectManifest({
+      swSrc: path.resolve(__dirname,"service-worker.js"),
+      swDest: "service-worker.js",
+      exclude: [
+        /\.map$/,
+        /manifest$/,
+        /\.htaccess$/,
+        /service-worker\.js$/,
+        /sw\.js$/,
+      ],
     }),
     new HtmlWebpackPlugin({
         template:  path.resolve(__dirname, 'index.html'),
-    }),
+      }),
   ],
 };

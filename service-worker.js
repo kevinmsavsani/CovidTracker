@@ -1,10 +1,11 @@
+import { precacheAndRoute } from 'workbox-precaching';
 
+precacheAndRoute(self.__WB_MANIFEST);
 
 (function () {
   'use strict';
 
   var staticFilesToCache = [
-    '/offline.html',
   ];
 
   var apiToCache = [
