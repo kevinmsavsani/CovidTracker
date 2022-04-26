@@ -16,7 +16,7 @@
   <script src="/dist/assets/js/app.bundle.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('assets/js/service-worker.js')
+      navigator.serviceWorker.register('assets/js/service-worker.js', { scope: '/' })
         .then(function(registration) {
           console.log('%c##Service Worker##',
                 'background: #008000	; color: #fff',
