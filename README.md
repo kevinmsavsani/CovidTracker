@@ -10,7 +10,7 @@
 ● visualised the same data on an interactive map - used react-leaflet to make interactive map. can be checked at src/map/CovidMap.jsx  <br />
 
 
-## Hot to Run
+## How to Run
 
 To run in development mode - 
 
